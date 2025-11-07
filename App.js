@@ -1033,8 +1033,8 @@ const Body = () => {
       <div className="restro-container">
         {
             data.map((restaurant) =>{
-                // console.log(restaurant);
-                <RestroCard key={restaurant.id}resData={restaurant} />
+                //  console.log(restaurant.id);
+                return <RestroCard key={restaurant.id} resData={restaurant} />
             })
         }
       </div>
@@ -1042,8 +1042,8 @@ const Body = () => {
   );
 };
 
-const RestroCard = ({props}) => {
-  const { name,cloudinaryImageId,cuisines,avgRating } = props;
+const RestroCard = ({resData}) => {
+  const { name,cloudinaryImageId,cuisines,avgRating } = resData;
   return (
     <div className="restro-card">
       <img
