@@ -38,3 +38,10 @@
     width: 100%;
     height: 50%;
 }
+
+.filter-by-rating{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
