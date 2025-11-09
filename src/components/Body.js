@@ -1,5 +1,5 @@
 import RestroCard from "./RetroCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 let data = [
   {
@@ -1007,7 +1007,11 @@ let data = [
 
 const Body = () => {
 
-    const [restro, setRestro] = useState(data);
+  const [restro, setRestro] = useState(data);
+
+  useEffect(() => {
+    console.log("useEffect called");
+  }, []);
 
   return (
     <div className="body">

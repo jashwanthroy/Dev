@@ -11,3 +11,9 @@ Separated all the components and import & exports, Started
 # REACT HOOKS 
 -> useState() - for State Variables in react
 Made the filter of avgRating > 4.4 in restaurants
+
+Day-4
+Minolithic and Microservices Architecture
+-> useEffect(()=>{},[])
+two parameters : callback function, dependency list
+callback function will be called after component rendering.

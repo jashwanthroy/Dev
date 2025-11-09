@@ -15,4 +15,4 @@ const RestroCard = ({resData}) => {
   );
 };
 
-export default RestroCard
+export default RestroCard;
