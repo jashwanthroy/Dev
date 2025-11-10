@@ -17,3 +17,8 @@ Minolithic and Microservices Architecture
 -> useEffect(()=>{},[])
 two parameters : callback function, dependency list
 callback function will be called after component rendering.
+
+Day-5
+Optional Chaining, shimmer ui, conditional Rendering
+using useState() -> created a button like toggle functionality for login and logout
+implementing the search bar functionality
