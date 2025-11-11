@@ -1005,42 +1005,77 @@ import Shimmer from "./Shimmer";
 //   },
 // ];
 
-
 const Body = () => {
-
   const [restro, setRestro] = useState([]);
-
+  const [changedlist,setChangedlist] = useState([]);
+  const [forsearch, setForsearch] = useState("");
   useEffect(() => {
     fetchData();
   }, []);
 
-  const fetchData =  async () => {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.42485235372867&lng=78.64480845630169&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.42485235372867&lng=78.64480845630169&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
     const json = await data.json();
     //optional Chaining
-    setRestro(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-  }
+    setRestro(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setChangedlist(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+  };
   // if(restro.length === 0){
   //   return <Shimmer/>
   // }
-  return (
-    restro.length === 0 ? <Shimmer/> :
+  return restro.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
-      <div className="Search">Search</div>
+      <div className="Search">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search Your Favourite Restaurant"
+          value={forsearch}
+          onChange={(e) => {setForsearch(e.target.value)
+            const ref = restro.filter((x) => {
+              // console.log(x.info.name);
+              return x.info.name.toLowerCase().includes(forsearch.toLowerCase());
+            });
+            setChangedlist(ref);
+          }}
+        />
+        <button
+          onClick={() => {
+            console.log(forsearch);
+            const ref = restro.filter((x) => {
+              // console.log(x.info.name);
+              return x.info.name.toLowerCase().includes(forsearch.toLowerCase());
+            });
+            setChangedlist(ref);
+          }}
+        >
+          Click
+        </button>
+      </div>
       <div className="filter">
-        <button className="filter-by-rating" onClick={()=>{
+        <button
+          className="filter-by-rating"
+          onClick={() => {
             const ref = restro.filter((res) => res.info.avgRating > 4.4);
-            setRestro(ref)
-        }}>Sort By Rating</button>
+            setRestro(ref);
+          }}
+        >
+          Sort By Rating
+        </button>
       </div>
       <div className="restro-container">
-        { 
-            restro.map((restaurant,index) =>{
-                return <RestroCard key={index} resData={restaurant} />
-            })
-        }
+        {changedlist.map((restaurant, index) => {
+          return <RestroCard key={index} resData={restaurant} />;
+        })}
       </div>
     </div>
   );
 };
-export default Body
+export default Body;
