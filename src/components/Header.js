@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [lgnin, setLgnin] = useState(false);
+
+  useEffect(() => {
+    console.log("Header rendered");
+  }, [lgnin]);
+
   return (
     <div className="header">
       <div className="logo">
