@@ -36,3 +36,24 @@ Tip: useState is not to declare outside function and not inside if-else,for-loop
 # REACT ROUTER
 npm i react-router-dom
 using createBrowserRouter to make use of routing and with the help of RouterProvider
+
+Day-7
+useRouteError which is sed to handle the errorElement for the rotues
+Children routes
+[
+    path: "/",
+    element: </>,
+    children:[{
+        path:"/xyz",
+        element,
+    },
+    ...
+    ],
+    errorElement:</>
+]
+<Oulet> it is a component which is used to replace the component based on the path or routes
+<Link path=""/> it is also a component which takes "path" parameter and which will not reload the page but rerender the component
+Two types of Routing
+-> client side routing (with out reload of page)
+-> server side routing (due to request response from server, API call from web browser)
+React Application called Single Page Application
