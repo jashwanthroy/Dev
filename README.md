@@ -57,3 +57,6 @@ Two types of Routing
 -> client side routing (with out reload of page)
 -> server side routing (due to request response from server, API call from web browser)
 React Application called Single Page Application
+
+Day-8
+Did Nothing but starting dynamic routing for rendering the menu of a specific restaurant.

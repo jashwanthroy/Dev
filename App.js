@@ -6,7 +6,7 @@ import Body from "./src/components/Body";
 import Aboutpage from "./src/components/Aboutpage";
 import Contactus from "./src/components/Contactus";
 import ErrorElement from "./src/components/ErrorElement";
-
+import Menupage from "./src/components/Menupage";
 const Application = () => {
   return (
     <div className="app">
@@ -33,6 +33,10 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: <Contactus />,
       },
+      {
+        path: "/menu/:resId",
+        element: <Menupage />,
+      }
     ],
     errorElement: <ErrorElement />,
   },
