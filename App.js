@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
@@ -40,7 +40,13 @@ const appRouter = createBrowserRouter([
     ],
     errorElement: <ErrorElement />,
   },
-]);
+],{
+  future:{
+    v7_normalizeFormMethod: true,
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(<RouterProvider future={{
+  v7_startTransition : true,
+}}router={appRouter} />);

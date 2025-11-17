@@ -1,14 +1,23 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 const Menupage = () => {
-    useEffect(() => {
-        //code to fetch menu data based on resId from params
-        fetchMenuData();
-    }, []);
-    const fetchMenuData = async () => {
-        //fetch logic here
-        // console.log("Fetching menu data...");
-        // const data = await()
-    };
+  const [menuInfo, setMenuInfo] = useState(null);
+  useEffect(() => {
+    //code to fetch menu data based on resId from params
+    fetchMenuData();
+  }, []);
+  const fetchMenuData = async () => {
+    const ref = await fetch(
+      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.42485235372867&lng=78.64480845630169&restaurantId=931955&catalog_qa=undefined&submitAction=ENTER"
+    );
+    // const json = await ref.json()
+    // console.log(typeof ref);
+    // setMenuInfo(json);
+    // console.log(json.data);
+  };
+  if (menuInfo === null) {
+    return <Shimmer />;
+  }
   return (
     <div className="menu">
       <h1>Name of The Restaurant</h1>
@@ -20,7 +29,7 @@ const Menupage = () => {
         <li>Pizza</li>
       </ul>
     </div>
-  );   
-}
+  );
+};
 
 export default Menupage;
