@@ -67,3 +67,7 @@
     border-radius: 5px;
     border: 2px solid black;
 }
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}

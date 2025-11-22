@@ -63,3 +63,7 @@ Did Nothing but starting dynamic routing for rendering the menu of a specific re
 
 Day-9
 for particular restaurant API is not working as it is coming from backend of SWiggy API 
+
+Day-10 (after 5 days gap)
+Started class based component
+->constructor,super(props),this.props
