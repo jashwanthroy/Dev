@@ -67,3 +67,17 @@ for particular restaurant API is not working as it is coming from backend of SWi
 Day-10 (after 5 days gap)
 Started class based component
 ->constructor,super(props),this.props
+React Life cycle
+Render -> Mounting -> React Update DOM and ref -> Update -> unmount
+
+ComponentDidMount
+ComponentDidUpdate 
+ComponentWillUnmount (for clearing the setIntervals,caches etc...)
+
+useEffect(()=>{
+
+    //This is used to act as ComponentWillUnmount in CBC's
+    return ()=>{
+
+    }
+},[])
