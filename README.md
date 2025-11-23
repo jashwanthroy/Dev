@@ -70,7 +70,7 @@ Started class based component
 React Life cycle
 Render -> Mounting -> React Update DOM and ref -> Update -> unmount
 
-ComponentDidMount
+ComponentDidMount (Need to use async inorder to call the API call's)
 ComponentDidUpdate 
 ComponentWillUnmount (for clearing the setIntervals,caches etc...)
 
@@ -81,3 +81,8 @@ useEffect(()=>{
 
     }
 },[])
+
+Day-11
+Single Responsible Principle
+Mobility -> Maintainance,Testing,Reusability
+Started Custom Hooks

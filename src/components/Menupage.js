@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { useParams } from "react-router";
 const Menupage = () => {
   const [menuInfo, setMenuInfo] = useState(null);
+  const {resId} = useParams;
+  //Custom Hook
+  const resInfo = useRestroMenu(resId);
+  
+
   useEffect(() => {
     //code to fetch menu data based on resId from params
     fetchMenuData();
