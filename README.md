@@ -86,3 +86,8 @@ Day-11
 Single Responsible Principle
 Mobility -> Maintainance,Testing,Reusability
 Started Custom Hooks
+
+
+Day-12
+Created Custom Hooks
+Sample: Online status Hook etc....

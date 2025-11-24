@@ -1,7 +1,7 @@
 import RestroCard from "./RetroCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-
+import useInternetStatus from "../../utils/useInternetStatus";
 // let ref = [
 //   {
 //       id: "688332",
@@ -1028,6 +1028,11 @@ const Body = () => {
   // if(restro.length === 0){
   //   return <Shimmer/>
   // }
+
+  const onlineStatus = useInternetStatus();
+  if(onlineStatus === false){
+    return <h1>You're Not connected to Internet</h1>
+  }
   return restro.length === 0 ? (
     <Shimmer />
   ) : (
