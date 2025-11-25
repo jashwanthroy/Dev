@@ -1037,10 +1037,10 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="Search">
+      <div className="m-4 p-4">
         <input
           type="text"
-          className="search-input"
+          className="border border-solid"
           placeholder="Search Your Favourite Restaurant"
           value={forsearch}
           onChange={(e) => {setForsearch(e.target.value)
@@ -1051,7 +1051,7 @@ const Body = () => {
             setChangedlist(ref);
           }}
         />
-        <button
+        <button className="px-4 py-2 bg-gray-200 rounded-2xl"
           onClick={() => {
             console.log(forsearch);
             const ref = restro.filter((x) => {
@@ -1064,9 +1064,9 @@ const Body = () => {
           Click
         </button>
       </div>
-      <div className="filter">
+      <div>
         <button
-          className="filter-by-rating"
+          className="m-4 p-4 bg-gray-200 rounded-2xl"
           onClick={() => {
             const ref = restro.filter((res) => res.info.avgRating > 4.4);
             setRestro(ref);
@@ -1075,7 +1075,7 @@ const Body = () => {
           Sort By Rating
         </button>
       </div>
-      <div className="restro-container">
+      <div className="flex flex-wrap">
         {changedlist.map((restaurant, index) => {
           return <RestroCard key={index} resData={restaurant} />;
         })}

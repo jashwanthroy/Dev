@@ -91,3 +91,7 @@ Started Custom Hooks
 Day-12
 Created Custom Hooks
 Sample: Online status Hook etc....
+
+Day-13
+Started using Tailwindcss
+Styling the Web Application

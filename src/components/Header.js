@@ -9,31 +9,31 @@ const Header = () => {
   }, [lgnin]);
   const onlineStatus = useInternetStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between bg-gray-200 shadow-lg m-4">
       <div className="logo">
         <img
-          className="logo"
+          className="w-50 p-3 m-2"
           src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
         />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="px-3">
             Online Status: {onlineStatus ? "🟢" : "🔴"}
           </li>
-          <li>
+          <li className="px-3">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-3">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="px-3">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="px-3">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
+          <li className="px-3">Cart</li>
           <button
             className="login-btn"
             onClick={() => {

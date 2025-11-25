@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/jashwanthroy/Dev#readme",
   "devDependencies": {
-    "parcel": "^2.16.1"
+    "parcel": "^2.16.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router": "^7.9.6"
