@@ -1,4 +1,4 @@
-import RestroCard from "./RetroCard";
+import RestroCard,{isOpened} from "./RetroCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import useInternetStatus from "../../utils/useInternetStatus";
@@ -1009,6 +1009,7 @@ const Body = () => {
   const [restro, setRestro] = useState([]);
   const [changedlist,setChangedlist] = useState([]);
   const [forsearch, setForsearch] = useState("");
+  const RestroWithOpen = isOpened(RestroCard);
   useEffect(() => {
     fetchData();
   }, []);
@@ -1018,6 +1019,7 @@ const Body = () => {
       "https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.42485235372867&lng=78.64480845630169&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log(restro)
     //optional Chaining
     setRestro(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -1075,10 +1077,13 @@ const Body = () => {
           Sort By Rating
         </button>
       </div>
-      <div className="flex flex-wrap">
-        {changedlist.map((restaurant, index) => {
-          return <RestroCard key={index} resData={restaurant} />;
-        })}
+      <div className="flex flex-wrap" >
+        {changedlist.map((restaurant, index) => (
+          restaurant.info.isOpen ? <RestroWithOpen resData={restaurant}/> : <RestroCard key={index} resData={restaurant} />
+      // console.log(restaurant.info.isOpen) 
+          // <RestroWithOpen key={index} resData={restaurant} />
+          
+        ))}
       </div>
     </div>
   );

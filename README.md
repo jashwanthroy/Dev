@@ -95,3 +95,8 @@ Sample: Online status Hook etc....
 Day-13
 Started using Tailwindcss
 Styling the Web Application
+
+Day-14
+High order Components
+Controlled and incontrolled components
+pAssing the props from children to parent (accordion functionality)

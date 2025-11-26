@@ -15,5 +15,20 @@ const RestroCard = ({resData}) => {
     </div>
   );
 };
+//Higher order component it is open or not
+
+export const isOpened = (RestroCard) =>{
+  return (props) =>{
+    return (
+      <div>
+        <label className="absolute bg-red-400 text-white m-5 p-2 rounded-2xl">Open</label>
+        <RestroCard {...props}/>
+      </div>
+    )
+  }
+}
+
+
+
 
 export default RestroCard;
