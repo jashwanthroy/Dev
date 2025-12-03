@@ -100,3 +100,6 @@ Day-14
 High order Components
 Controlled and incontrolled components
 pAssing the props from children to parent (accordion functionality)
+
+Day-15
+# Redux ToolKit 

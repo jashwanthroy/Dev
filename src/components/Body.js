@@ -1079,10 +1079,9 @@ const Body = () => {
       </div>
       <div className="flex flex-wrap" >
         {changedlist.map((restaurant, index) => (
-          restaurant.info.isOpen ? <RestroWithOpen resData={restaurant}/> : <RestroCard key={index} resData={restaurant} />
+          restaurant.info.isOpen ? <RestroWithOpen key={index} resData={restaurant}/> : <RestroCard key={index} resData={restaurant} />
       // console.log(restaurant.info.isOpen) 
           // <RestroWithOpen key={index} resData={restaurant} />
-          
         ))}
       </div>
     </div>

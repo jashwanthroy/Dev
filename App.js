@@ -9,14 +9,18 @@ import ErrorElement from "./src/components/ErrorElement";
 import Menupage from "./src/components/Menupage";
 import Shimmer from "./src/components/Shimmer";
 // import Grocery from "./src/components/Grocery";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const Grocery = lazy(()=> import("./src/components/Grocery"))
 const Application = () => {
   return (
+    <Provider store={appStore}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
+    </Provider>
   );
 };
 
