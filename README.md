@@ -103,3 +103,34 @@ pAssing the props from children to parent (accordion functionality)
 
 Day-15
 # Redux ToolKit 
+Dispatch(action) -> calls a reducer function -> which makes the changes in the slice of a redux store
+If to Read Data from the slice in redux store -> using the selector which subscribes the component on the UI
+
+Day-16
+we use reducers -> as a functions to perform on slices 
+reducer -> which acts a slice or part in the redux store
+
+using useDispatch() and useSelector() we perform modifying and access the state or data in the slices
+redux in background uses the Immer library which is old and uses vanilla redux which does not accept the mutablility of the state in reducers function
+
+# Testing
+    -> Types (devloper)
+        -> Unit (Component in isolation of the Apps)
+        -> Integration
+        -> End to End (E2E)
+
+React Testing Library -> is built on top of DOM Testing library
+It uses Jest (Js Testing framwork) in Background
+In babel,install additional dependencies and configure Babel
+
+To setup manually rather than create-react-app
+    - install RTL
+    - install jest
+    - Babel dependencies
+    - Configure
+    - Configure parcel config file
+    - Jest
+    - Install jsdom library
+
+__tests__ folder
+ ->.test.js / .spec.js

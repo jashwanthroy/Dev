@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const cardSlice = createSlice({
+const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        items: []
+        items: ["burgur","pizza","briyani","shawarma","fried rice"]
     },
     reducers: {
         addItem: (state, action) =>{
@@ -17,3 +17,5 @@ const cardSlice = createSlice({
         }
     }
 })
+export const {addItem,removeItem,clearCart} = cartSlice.actions;
+export default cartSlice.reducer;
