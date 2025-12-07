@@ -134,3 +134,29 @@ To setup manually rather than create-react-app
 
 __tests__ folder
  ->.test.js / .spec.js
+
+ Day-17
+-> Unit testing
+ test("description",() =>{
+    //Assertion
+ })
+ it("description",()=>{
+    //Assertion
+ })
+ to combine multiple test cases into single conble done using
+ describe("description:,()=>{
+    it("",()=>{
+
+    })
+    it("",()=>{
+
+    })
+    ...
+ })
+ If using react redux or reactrouterdom then while rendering use the <Provider> and <BrowserRouter>
+
+
+Day-18
+For testing props then we use the mockdata for the particular prop and test them separately rather than testing the whole data.
+
+->Integration Testing
